@@ -45,12 +45,12 @@
           :key="type"
           class="card-line">
           <card
-            v-for="card in cards"
-            :key="card"
+            v-for="weight in weights"
+            :key="weight"
             :type="type"
-            :num="card"
+            :weight="weight"
             :as-down="asDown"
-            v-show="isShow(type, card)"></card>
+            v-show="isShow(type, weight)"></card>
         </div>
       </div>
       <div id="players">

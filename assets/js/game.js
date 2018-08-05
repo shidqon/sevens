@@ -8,7 +8,7 @@
       },
       data: {
         types: ['diamonds', 'clubs', 'hearts', 'spades'],
-        cards: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a',],
+        weights: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a',],
         showList: {
           diamonds: ['6', '7', 'a'],
           clubs: ['7'],
@@ -20,15 +20,15 @@
       watch: {
         asDown() {
           if (this.asDown) {
-            this.cards.splice(12, 1);
-            this.cards.unshift('a');
+            this.weights.splice(12, 1);
+            this.weights.unshift('a');
           }
         },
       },
       methods: {
-        isShow(type, num) {
-          return this.showList[type].includes(num);
-        }
+        isShow(type, weight) {
+          return this.showList[type].includes(weight);
+        },
       },
       mounted() {
 

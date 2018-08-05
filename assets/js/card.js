@@ -7,7 +7,7 @@ window.SevensCard = {
       type: String,
       default: '',
     },
-    num: {
+    weight: {
       type: String,
       default: '',
     },
@@ -37,15 +37,15 @@ window.SevensCard = {
   computed: {
     positionClass() {
       let posClass = '';
-      if (this.positionDown.includes(this.num)) {
+      if (this.positionDown.includes(this.weight)) {
         posClass = 'card--down';
-      } else if (this.positionUp.includes(this.num)) {
+      } else if (this.positionUp.includes(this.weight)) {
         posClass = 'card--up'
       }
       return posClass;
     },
     cardClass() {
-      const cardClass = this.flipped ? 'card--back' : `card--${this.type}--${this.num}`;
+      const cardClass = this.flipped ? 'card--back' : `card--${this.type}--${this.weight}`;
       return cardClass;
     },
   },
