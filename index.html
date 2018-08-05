@@ -22,6 +22,8 @@
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="assets/vendor/vue.js"></script>
+  <script type="text/javascript" src="assets/js/game.js"></script>
 
 
   <!-- Favicon
@@ -33,23 +35,24 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div id="vm__sevens">
   <div id="container">
     <div id="board">
       <div id="card-board">
         <div class="card-line">
-          <div class="card card--diamonds--2 card--down"></div>
-          <div class="card card--diamonds--3 card--down"></div>
-          <div class="card card--diamonds--4 card--down"></div>
-          <div class="card card--diamonds--5 card--down"></div>
-          <div class="card card--diamonds--6 card--down"></div>
-          <div class="card card--diamonds--7 card--center"></div>
-          <div class="card card--diamonds--8 card--up"></div>
-          <div class="card card--diamonds--9 card--up"></div>
-          <div class="card card--diamonds--10 card--up"></div>
-          <div class="card card--diamonds--j card--up"></div>
-          <div class="card card--diamonds--q card--up"></div>
-          <div class="card card--diamonds--k card--up"></div>
-          <div class="card card--diamonds--a card--up"></div>
+          <div class="card card--diamonds--2 card--down" v-show="isShow('diamonds', '2')"></div>
+          <div class="card card--diamonds--3 card--down" v-show="isShow('diamonds', '3')"></div>
+          <div class="card card--diamonds--4 card--down" v-show="isShow('diamonds', '4')"></div>
+          <div class="card card--diamonds--5 card--down" v-show="isShow('diamonds', '5')"></div>
+          <div class="card card--diamonds--6 card--down" v-show="isShow('diamonds', '6')"></div>
+          <div class="card card--diamonds--7 card--center" v-show="isShow('diamonds', '7')"></div>
+          <div class="card card--diamonds--8 card--up" v-show="isShow('diamonds', '8')"></div>
+          <div class="card card--diamonds--9 card--up" v-show="isShow('diamonds', '9')"></div>
+          <div class="card card--diamonds--10 card--up" v-show="isShow('diamonds','10')"></div>
+          <div class="card card--diamonds--j card--up" v-show="isShow('diamonds', 'j')"></div>
+          <div class="card card--diamonds--q card--up" v-show="isShow('diamonds', 'q')"></div>
+          <div class="card card--diamonds--k card--up" v-show="isShow('diamonds', 'k')"></div>
+          <div class="card card--diamonds--a card--up" v-show="isShow('diamonds', 'a')"></div>
         </div>
         <div class="card-line">
           <div class="card card--clubs--2 card--down"></div>
@@ -113,7 +116,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
