@@ -17,6 +17,7 @@
           spades: ['7'],
         },
         asDown: false,
+        playerDeck: [[], [], [], []],
       },
       watch: {
         asDown() {
@@ -48,10 +49,25 @@
             this.deck[rndNo2] = card;
           }
         },
+        setPlayerDeck() {
+          for(let i = 0; i < 13; i++) {
+            this.playerDeck[0].push(this.deck[i]);
+          }
+          for(let i = 13; i < 26; i++) {
+            this.playerDeck[1].push(this.deck[i]);
+          }
+          for(let i = 26; i < 39; i++) {
+            this.playerDeck[2].push(this.deck[i]);
+          }
+          for(let i = 39; i < 52; i++) {
+            this.playerDeck[3].push(this.deck[i]);
+          }
+        },
       },
       mounted() {
         this.createDeck();
         this.shuffleDeck();
+        this.setPlayerDeck();
       }
     });
 

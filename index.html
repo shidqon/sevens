@@ -67,6 +67,17 @@
           <div class="card card--back"></div>
         </div>
       </div>
+      <div id="player-deck">
+        <div id="player-deck__scroller">
+          <div id="player-deck__scroller__inner">
+            <card
+              v-for="(card, index) in playerDeck[0]"
+              :key="index"
+              :type="card.type"
+              :weight="card.weight"></card>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
