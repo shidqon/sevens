@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: Arial;
 }
 
 /* CONTAINER */
@@ -30,6 +31,21 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+#players {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#players__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .card-line {
@@ -299,3 +315,41 @@ body {
   bottom: 8px;
   right: 8px;
 }
+
+/*  BUTTON */
+.button {
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+
+/* DECK CONTROLL*/
+#deck-controll {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 26px;
+}
+
+
+/* DECK OPEN */
+.board--with-deck #card-board {
+  transform: translateY(-50%) scale(.75);
+  left: 38px;
+}
+
+.board--with-deck #players {
+  padding-left: 74px;
+}
+
+.board--with-deck #deck-controll  {
+  right: 0;
+  width: 246px;
+
+}
+

@@ -18,6 +18,7 @@
         },
         asDown: false,
         playerDeck: [[], [], [], []],
+        showDeck: false,
       },
       watch: {
         asDown() {
@@ -62,6 +63,12 @@
           for(let i = 39; i < 52; i++) {
             this.playerDeck[3].push(this.deck[i]);
           }
+        },
+        openDeck() {
+          this.showDeck = true;
+        },
+        closeDeck() {
+          this.showDeck = false;
         },
       },
       mounted() {

@@ -38,7 +38,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div id="vm__sevens">
   <div id="container">
-    <div id="board">
+    <div id="board" :class="{'board--with-deck': showDeck}">
       <div id="card-board">
         <div
           v-for="type in types"
@@ -54,20 +54,22 @@
         </div>
       </div>
       <div id="players">
-        <div id="player--1" class="player">
-          <div class="card card--back"></div>
-        </div>
-        <div id="player--2" class="player">
-          <div class="card card--back"></div>
-        </div>
-        <div id="player--3" class="player">
-          <div class="card card--back"></div>
-        </div>
-        <div id="player--4" class="player">
-          <div class="card card--back"></div>
+        <div id="players__inner">
+          <div id="player--1" class="player">
+            <div class="card card--back"></div>
+          </div>
+          <div id="player--2" class="player">
+            <div class="card card--back"></div>
+          </div>
+          <div id="player--3" class="player">
+            <div class="card card--back"></div>
+          </div>
+          <div id="player--4" class="player">
+            <div class="card card--back"></div>
+          </div>
         </div>
       </div>
-      <div id="player-deck">
+      <div id="player-deck" v-show="showDeck">
         <div id="player-deck__scroller">
           <div id="player-deck__scroller__inner">
             <card
@@ -76,6 +78,12 @@
               :type="card.type"
               :weight="card.weight"></card>
           </div>
+        </div>
+      </div>
+      <div id="deck-controll">
+        <div id="toggle-deck">
+          <div v-if="!showDeck"class="button" @click="openDeck">Lihat Deck </div>
+          <div v-else=""class="button" @click="closeDeck">Tutup Deck </div>
         </div>
       </div>
     </div>
