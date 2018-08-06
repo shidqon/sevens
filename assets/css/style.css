@@ -334,6 +334,27 @@ body {
   display: inline-block;
 }
 
+.button--black {
+  color: #fff;
+  background: #333;
+}
+
+.button--small {
+  font-size: 10px;
+}
+
+/* MODAL */
+.modal {
+  background: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: left;
+}
+
+.modal__footer {
+  margin-top: 16px;
+  text-align: right;
+}
 
 /* DECK CONTROLL*/
 #deck-controll {
@@ -343,6 +364,15 @@ body {
   bottom: 26px;
 }
 
+#deck-controll__toggle {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+#deck-controll__place {
+  margin: -150px 8px 0;
+}
 
 /* DECK OPEN */
 .board--with-deck #card-board {

@@ -84,9 +84,16 @@
         </div>
       </div>
       <div id="deck-controll">
-        <div id="toggle-deck">
+        <div id="deck-controll__toggle">
           <div v-if="!showDeck"class="button" @click="openDeck">Lihat Deck </div>
           <div v-else=""class="button" @click="closeDeck">Tutup Deck </div>
+        </div>
+        <div id="deck-controll__place" class="modal" v-if="showPlaceCard">
+          <div>Pilih kartu ini?</div>
+          <div class="modal__footer">
+            <div class="button button--black button--small" @click="closePlaceCard"> Tidak </div>
+            <div class="button button--black button--small" @click="placeCard"> Ya </div>
+          </div>
         </div>
       </div>
     </div>

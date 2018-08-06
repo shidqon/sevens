@@ -20,6 +20,7 @@
         playerDeck: [[], [], [], []],
         showDeck: false,
         activeIndex: '',
+        showPlaceCard: false,
       },
       watch: {
         asDown() {
@@ -67,12 +68,25 @@
         },
         selectCard(index) {
           this.activeIndex = index;
+          this.openPlaceCard();
+        },
+        placeCard() {
+          const activeCard = this.playerDeck[0][this.activeIndex];
+          this.showList[activeCard.type].push(activeCard.weight);
+          this.closePlaceCard();
+          this.closeDeck();
         },
         openDeck() {
           this.showDeck = true;
         },
         closeDeck() {
           this.showDeck = false;
+        },
+        openPlaceCard() {
+          this.showPlaceCard = true;
+        },
+        closePlaceCard() {
+          this.showPlaceCard = false;
         },
       },
       mounted() {
