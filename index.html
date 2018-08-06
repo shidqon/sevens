@@ -50,7 +50,7 @@
             :type="type"
             :weight="weight"
             :as-down="asDown"
-            v-show="isShow(type, weight)"></card>
+            v-if="isShow(type, weight)"></card>
         </div>
       </div>
       <div id="players">
@@ -69,14 +69,17 @@
           </div>
         </div>
       </div>
-      <div id="player-deck" v-show="showDeck">
+      <div id="player-deck" v-if="showDeck">
         <div id="player-deck__scroller">
           <div id="player-deck__scroller__inner">
             <card
               v-for="(card, index) in playerDeck[0]"
               :key="index"
               :type="card.type"
-              :weight="card.weight"></card>
+              :weight="card.weight"
+              :index="index"
+              :active="index === activeIndex"
+              @selected="selectCard"></card>
           </div>
         </div>
       </div>

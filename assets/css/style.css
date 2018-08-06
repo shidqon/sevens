@@ -270,6 +270,13 @@ body {
   margin-bottom: -10px;
 }
 
+#player-deck .card.card--active {
+  border-color: #ff0;
+  margin-left: 10px;
+}
+
+
+
 /* PLAYER CARD */
 .player .card {
   transform: scale(.5);

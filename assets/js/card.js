@@ -1,6 +1,6 @@
 window.SevensCard = {
   template: `
-    <div class="card" :class="[cardClass, positionClass]"></div>
+    <div class="card" :class="[cardClass, positionClass, activeClass]" @click.prevent="pickCard"></div>
   `,
   props: {
     type: {
@@ -19,11 +19,19 @@ window.SevensCard = {
       type: Boolean,
       default: false,
     },
+    index: {
+      type: Number,
+      default: 0,
+    },
+    active: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       positionDown: ['2', '3', '4', '5', '6'],
-      positionUp: ['j', 'q', 'k', 'a',],
+      positionUp: ['8', '9', '10', 'j', 'q', 'k', 'a',],
     };
   },
   watch: {
@@ -47,6 +55,15 @@ window.SevensCard = {
     cardClass() {
       const cardClass = this.flipped ? 'card--back' : `card--${this.type}--${this.weight}`;
       return cardClass;
+    },
+    activeClass() {
+      const activeClass = this.active ? 'card--active' : '';
+      return activeClass;
+    },
+  },
+  methods: {
+    pickCard() {
+      this.$emit('selected', this.index);
     },
   },
 };

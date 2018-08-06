@@ -11,14 +11,15 @@
         weights: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a',],
         deck: [],
         showList: {
-          diamonds: ['6', '7', 'a'],
-          clubs: ['7'],
-          hearts: ['7'],
-          spades: ['7'],
+          diamonds: [],
+          clubs: [],
+          hearts: [],
+          spades: [],
         },
         asDown: false,
         playerDeck: [[], [], [], []],
         showDeck: false,
+        activeIndex: '',
       },
       watch: {
         asDown() {
@@ -63,6 +64,9 @@
           for(let i = 39; i < 52; i++) {
             this.playerDeck[3].push(this.deck[i]);
           }
+        },
+        selectCard(index) {
+          this.activeIndex = index;
         },
         openDeck() {
           this.showDeck = true;
